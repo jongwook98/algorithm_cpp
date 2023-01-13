@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// 어디서 값이 갱신 되었는지 어떤 노드로부터 정보가 갱신되었는지 확인하는 변수 추가
+
 int check[100001];
 int from[100001];
 
