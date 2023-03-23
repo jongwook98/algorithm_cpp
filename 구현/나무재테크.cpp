@@ -2,12 +2,6 @@
 #include<iostream>
 #include<vector>
 
-/*
-sort는 시간이 굉장히 오래 걸림
-문제 조건을 보고 sort를 굳이 쓸 필요 없다면 사용하지 말고
-sort 함수를 사용하지 않고 정렬할 수 있는 방법을 찾아볼 것
-*/
-
 using namespace std;
 
 int N;
@@ -68,7 +62,7 @@ void fall() {
 	}
 	for (info t : tree) newtree.push_back(t);
 	tree.clear();
-	
+
 	for (info t : newtree) tree.push_back(t);
 	newtree.clear();
 }
