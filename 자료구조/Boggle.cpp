@@ -1,6 +1,7 @@
 // 반례가 생각 안나는 문제
 // 인터넷 반례들은 맞는데 10%에서 틀
 // 소요시간 4h
+// + 동적할당 free 추가
 
 #include<iostream>
 #include<map>
@@ -34,6 +35,11 @@ int getpoint(int idx) {
 struct Trie {
 	map<char, pair<Trie*, int>> mm;
 
+	~Trie() {
+		for (auto& entry : mm) {
+			delete entry.second.first;
+		}
+	}
 	void insert(vector<char>& v, int idx) {
 		if (v.size() == idx) {
 			if (mm.find('&') == mm.end()) {
@@ -163,5 +169,6 @@ int main() {
 
 		if (b > 0) getline(cin, str);
 	}
+	delete root;
 	return 0;
 }
